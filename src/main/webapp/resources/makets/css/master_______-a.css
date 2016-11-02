@@ -1,0 +1,258 @@
+#u554
+{
+	background-color: #2D353C;
+}
+
+#u496
+{
+	-pie-box-shadow: 0px 6px 8px #C6C6C6;
+	box-shadow: 0px 6px 8px rgba(0,0,0,0.22);
+	background-color: #FFFFFF;
+}
+
+#u485
+{
+	background-color: transparent;
+	opacity: 0.25;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+	filter: alpha(opacity=25);
+}
+
+#u613-2
+{
+	padding-left: 10px;
+}
+
+#u719-4
+{
+	border-style: solid;
+	border-color: #636F79;
+	background-color: transparent;
+	font-size: 16px;
+	color: #636F79;
+	line-height: 25px;
+	border-width: 0px 0px 2px;
+}
+
+#u719-2
+{
+	padding-left: 10px;
+}
+
+#u722-4
+{
+	background-color: transparent;
+	text-indent: 15px;
+	color: #636F79;
+	line-height: 22px;
+}
+
+#u722-2
+{
+	padding-left: 10px;
+}
+
+#u591-2
+{
+	padding-left: 10px;
+}
+
+#u647-4
+{
+	background-color: transparent;
+	color: #636F79;
+	line-height: 22px;
+}
+
+#u647-2
+{
+	padding-left: 10px;
+}
+
+#u657-2
+{
+	padding-left: 10px;
+}
+
+#u657-4,#u660-4
+{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #636F79;
+	background-color: transparent;
+	border-radius: 3px;
+	color: #636F79;
+	line-height: 22px;
+}
+
+#u660-2
+{
+	padding-left: 10px;
+}
+
+#buttonu663
+{
+	-webkit-transition-duration: 1s;
+	-webkit-transition-delay: 0s;
+	-webkit-transition-timing-function: ease;
+	transition-duration: 1s;
+	transition-delay: 0s;
+	transition-timing-function: ease;
+	background-image: url("../resources/images/blank.gif");
+	border-width: 0px;
+	background-color: #00ACAC;
+	border-radius: 3px;
+}
+
+#buttonu663:hover
+{
+	background-color: #007DAC;
+}
+
+#buttonu663.ButtonSelected
+{
+	background-color: #00ACAC;
+}
+
+#u685-4
+{
+	background-color: transparent;
+	line-height: 20px;
+	text-align: center;
+	color: #48535C;
+	font-weight: bold;
+}
+
+#u688
+{
+	background-color: transparent;
+}
+
+#buttonu702
+{
+	-webkit-transition-duration: 1s;
+	-webkit-transition-delay: 0s;
+	-webkit-transition-timing-function: ease;
+	transition-duration: 1s;
+	transition-delay: 0s;
+	transition-timing-function: ease;
+	background-image: url("../resources/images/blank.gif");
+	border-width: 0px;
+	background-color: #F12F34;
+	border-radius: 3px;
+}
+
+#buttonu702:hover
+{
+	background-color: #FD5C60;
+}
+
+#buttonu702.ButtonSelected
+{
+	background-color: #F12F34;
+}
+
+#u705-4
+{
+	background-color: transparent;
+	line-height: 20px;
+	text-align: center;
+	color: #48535C;
+	font-weight: bold;
+}
+
+#u703
+{
+	background-color: transparent;
+}
+
+#u626-2
+{
+	padding-left: 10px;
+}
+
+#u483,#u611,#u608,#u623,#u635
+{
+	border-width: 0px;
+	border-color: transparent;
+	background-color: transparent;
+}
+
+#u612,#u601,#u625,#u636
+{
+	-pie-box-shadow: 4px 4px 8px #BFBFBF;
+	box-shadow: 4px 4px 8px rgba(0,0,0,0.25);
+	background-color: #FFFFFF;
+	border-radius: 10px 10px 0px 0px ;
+}
+
+#u614,#u604,#u624,#u638
+{
+	background-color: #2D353C;
+	border-radius: 4px 4px 0px 0px ;
+}
+
+#u613-4,#u591-4,#u626-4,#u637-4
+{
+	text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+	-pie-box-shadow: none;
+	box-shadow: none;
+	border-color: #636F79;
+	background-color: transparent;
+	border-radius: 2px 2px 0px 0px ;
+	font-size: 16px;
+	color: #FFFFFF;
+	line-height: 22px;
+}
+
+#u637-2
+{
+	padding-left: 10px;
+}
+
+#u613,#u591,#u626,#u637
+{
+	color: #FFFFFF;
+}
+
+#u650,#u520,#u530
+{
+	background-color: transparent;
+}
+
+#u484-4,#u796-4
+{
+	display: block;
+	vertical-align: top;
+}
+
+#u499
+{
+	-webkit-transition-duration: 1s;
+	-webkit-transition-delay: 0s;
+	-webkit-transition-timing-function: ease;
+	transition-duration: 1s;
+	transition-delay: 0s;
+	transition-timing-function: ease;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #101D28;
+	border-radius: 65px;
+	background: transparent url("../resources/images/default_avatar.png") no-repeat center center;
+	background-size: cover;
+}
+
+#u499:hover
+{
+	-webkit-transition-duration: 1s;
+	-webkit-transition-delay: 0s;
+	-webkit-transition-timing-function: ease;
+	transition-duration: 1s;
+	transition-delay: 0s;
+	transition-timing-function: ease;
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-color: #CCCCCC;
+	background-size: cover;
+}
+

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="js html" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Come to the Dark Side</title>
+        <h:outputStylesheet library="css" name="index.css" />
+        <h:outputStylesheet library="css" name="site_global.css" />
+    </h:head>
+    <h:body>
+        <div class="clearfix borderbox" id="page"><!-- group -->
+            <div class="browser_width" id="u329-bw">
+                <div id="u329"><!-- simple frame --></div>
+            </div>
+            <div id="u326"><!-- simple frame --></div>
+            <h:form>
+                <div class="rounded-corners clearfix" id="u346-5"><!-- content -->
+                    <h:inputText id="login" value="#{userController.current.login}" class="form_text_input" />
+                    <p:watermark for="login" value="Логин" />
+                </div>
+                <div class="clearfix" id="u480"><!-- group -->
+                    <div class="clip_frame" id="u332"><!-- image -->
+                        <img class="block" id="u332_img" src="resources/images/empty_logo.png" alt="" data-image-width="113" data-image-height="113"/>
+                    </div>
+                    <img id="u342-4" alt="Дикий Сад" src="resources/images/u342-4.png" data-image-width="246"/><!-- rasterized frame -->
+                </div>
+                <div class="rounded-corners clearfix" id="u351-4"><!-- content -->
+                    <h:inputSecret id="pass" value="#{userController.current.password}" class="form_text_input" />
+                    <p:watermark for="pass" value="Пароль" />
+                </div>
+                <div class="Button transition rounded-corners clearfix" id="buttonu370"><!-- container box -->
+                    <div class="clip_frame grpelem" id="u379"><!-- image -->
+                        <img class="block" id="u379_img" src="resources/images/user.png" alt="" data-image-width="24" data-image-height="24"/>
+                    </div>
+                    <h:commandLink action="#{userController.login()}"> 
+                        <div class="clearfix grpelem" id="u381-4"><!-- content -->
+                            <p><span id="u381">Войти</span></p>
+                        </div>
+                    </h:commandLink>
+
+                </div>
+            </h:form>
+            <a class="nonblock nontext Button transition rounded-corners clearfix" id="buttonu396" href="authorization.xhtml?faces-redirect=true"><!-- container box --><div class="clip_frame grpelem" id="u397"><!-- image --><img class="block" id="u397_img" src="resources/images/user_plus.png" alt="" data-image-width="24" data-image-height="24"/></div><div class="clearfix grpelem" id="u399-4"><!-- content --><p><span id="u399">Зарегистрироваться</span></p></div></a>
+            <div class="verticalspacer"></div>
+        </div>
+    </h:body>
+</html>
+

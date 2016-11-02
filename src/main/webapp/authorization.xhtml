@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="js html" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Dark Side Wild Wild Park</title>
+        <h:outputStylesheet library="css" name="site_global.css" />
+        <h:outputStylesheet library="css" name="authorization_request.css" />
+    </h:head>
+    <h:body>
+        <div class="clearfix borderbox" id="page"><!-- group -->
+            <div class="browser_width" id="u425-bw">
+                <div id="u425"><!-- simple frame --></div>
+            </div>
+            <div id="u426"><!-- simple frame --></div>
+            <a class="nonblock nontext clip_frame" id="u427" href="index.xhtml?faces-redirect=true"><!-- image --><img class="block" id="u427_img" src="resources/images/empty_logo.png" alt="" data-image-width="113" data-image-height="113"/></a>
+            <a class="nonblock nontext" id="u429-4" href="index.html"><!-- rasterized frame --><img id="u429-4_img" alt="Дикий Сад" src="resources/images/u429-4.png" data-image-width="246"/></a>
+            <h:form>
+                <div class="rounded-corners clearfix" id="u430-5"><!-- content -->
+                    <h:inputText value="#{userController.current.login}" id="login"/>
+                    <p:watermark for="login" value="Логин"/>
+                </div>
+                <div class="rounded-corners clearfix" id="u431-4"><!-- content -->
+                    <h:inputText value="#{userController.current.email}" id="mail"/>
+                    <p:watermark for="mail" value="E-Mail"/>
+                </div>
+                <div class="rounded-corners clearfix" id="u431-4" style="top:350px"><!-- content -->
+                    <h:inputTextarea  value="#{userController.current.about}" id="about" style="overflow: hidden!important;"/>
+                    <p:watermark for="about" value="Кто Вы?"/>
+                </div>
+                <h:commandLink action="#{userController.getAuthorizationRequest()}">
+                    <div class="Button transition rounded-corners clearfix" id="buttonu436" style="top:415px;"><!-- container box -->
+                        <div class="clip_frame grpelem" id="u438"><!-- image -->
+                            <img class="block" id="u438_img" src="resources/images/user_plus.png" alt="" data-image-width="24" data-image-height="24"/>
+                        </div>
+                        <div class="clearfix grpelem" id="u437-4"><!-- content -->
+                            <p><span id="u437">Отправить</span></p>
+                        </div>
+                    </div>
+                </h:commandLink>
+            </h:form>
+            <div class="verticalspacer"></div>
+        </div>
+    </h:body>
+</html>
+
