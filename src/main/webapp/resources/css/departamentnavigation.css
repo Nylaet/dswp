@@ -1,0 +1,182 @@
+.globalNavButton{
+    -webkit-transition-duration: 1s;
+    -webkit-transition-delay: 0s;
+    -webkit-transition-timing-function: ease;
+    transition-duration: 1s;
+    transition-delay: 0s;
+    transition-timing-function: ease;
+    border-width: 0px;
+    position: relative;
+    width: 180px;
+    height:85px;
+    float: left;
+    clear:none!important;
+    margin: 2px;
+}
+
+#pbuttonu933
+{
+    margin-right: -10000px;
+    margin-top: 72px;
+    width: 180px;
+    margin: 5px;
+}
+
+#maps
+{    
+    background-image: url("../resources/images/bg/maps-bg.jpg");
+    background-position: left center;
+}
+
+#maps:hover{
+    background-position: right center;
+}
+
+#admin
+{    
+    background-image: url("../resources/images/bg/admin-bg.png");
+    background-position: left bottom;
+}
+
+#admin:hover
+{    
+    background-position: center top;
+}
+
+#logout{
+    background-image: url("../resources/images/bg/logout-bg.png");
+    background-position: left center;
+}
+#logout:hover
+{    
+    background-position: right top;
+}
+#logoutText{
+    z-index: 3;
+    min-height: 30px;
+    background-color: #2D353C;
+    line-height: 29px;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    margin-right: -10000px;
+    margin-top: 55px;
+    width: 100%;
+}
+#wpeco{
+    background-image:url("../resources/images/bg/wpeco_bg.png");
+    background-position: right center;
+}
+#wpeco:hover{
+    background-position: left center;
+}
+#developer{
+    background-image: url("../resources/images/bg/java-bg.jpg");
+    background-position: left top;
+}
+#developer:hover{
+    background-position: center center;
+}
+
+#techsupport
+{
+    background-image: url("../resources/images/bg/techsupport-bg.png");
+    background-position: right center;
+}
+
+#techsupport:hover
+{
+    background-position: left center;    
+}
+
+#u957-4
+{
+    z-index: 3;
+    min-height: 30px;
+    background-color: #00ACAC;
+    line-height: 29px;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    margin-right: -10000px;
+    margin-top: 55px;
+    width: 100%;
+}
+
+#u957
+{
+    color: #FFFFFF;
+}
+
+#u1027-4
+{
+    z-index: 18;
+    min-height: 30px;
+    background-color: #57C279;
+    line-height: 29px;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    margin-right: -10000px;
+    margin-top: 55px;
+    width: 100%;
+}
+
+#u969-4
+{
+    z-index: 8;
+    min-height: 30px;
+    background-color: #007DAC;
+    line-height: 29px;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    margin-right: -10000px;
+    margin-top: 55px;
+    width: 100%;
+}
+
+#u1049-4
+{
+    z-index: 23;
+    min-height: 30px;
+    background-color: #57C279;
+    line-height: 29px;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    margin-right: -10000px;
+    margin-top: 55px;
+    width: 100%;
+}
+
+
+
+
+#u1005-4
+{
+    z-index: 13;
+    min-height: 30px;
+    background-color: #6C76AF;
+    line-height: 29px;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    margin-right: -10000px;
+    margin-top: 55px;
+    width: 100%;
+}
+
+#u1027,#u969,#u1049,#u1005
+{
+    text-align: center;
+    color: #FFFFFF;
+}
+
+

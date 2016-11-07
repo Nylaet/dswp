@@ -7,15 +7,17 @@
         <title>Dark Side Wild Wild Park</title>
         <h:outputStylesheet library="css" name="site_global.css" />
         <h:outputStylesheet library="css" name="authorization_request.css" />
+        <h:outputStylesheet library="css" name="primefaces_embeded.css" />
     </h:head>
     <h:body>
         <div class="clearfix borderbox" id="page"><!-- group -->
+            <p:growl id="growl" autoUpdate="true" />
             <div class="browser_width" id="u425-bw">
                 <div id="u425"><!-- simple frame --></div>
             </div>
             <div id="u426"><!-- simple frame --></div>
             <a class="nonblock nontext clip_frame" id="u427" href="index.xhtml?faces-redirect=true"><!-- image --><img class="block" id="u427_img" src="resources/images/empty_logo.png" alt="" data-image-width="113" data-image-height="113"/></a>
-            <a class="nonblock nontext" id="u429-4" href="index.html"><!-- rasterized frame --><img id="u429-4_img" alt="Дикий Сад" src="resources/images/u429-4.png" data-image-width="246"/></a>
+            <a class="nonblock nontext" id="u429-4" href="index.xhtml?faces-redirect=true"><!-- rasterized frame --><img id="u429-4_img" alt="Дикий Сад" src="resources/images/u429-4.png" data-image-width="246"/></a>
             <h:form>
                 <div class="rounded-corners clearfix" id="u430-5"><!-- content -->
                     <h:inputText value="#{userController.current.login}" id="login"/>

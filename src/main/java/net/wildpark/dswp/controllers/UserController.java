@@ -24,6 +24,7 @@ import net.wildpark.dswp.enums.UserRole;
 import net.wildpark.dswp.facades.LogFacade;
 import net.wildpark.dswp.facades.UserFacade;
 import net.wildpark.dswp.supports.MailService;
+import net.wildpark.dswp.supports.MailTemplate;
 
 
 /**
@@ -85,6 +86,12 @@ public class UserController implements Serializable {
             logFacade.create(new Log("Приложение запущено"));
         }
     }
+    
+    public void saveChanges(){
+        userFacade.edit(current);
+        logFacade.create(new Log("Пользователь "+current.getLogin()+" внес изменения своей учетной записи"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Изменения успешно сохранены"));
+    }
 
     public String login() {
         List<User> users = userFacade.findAll();
@@ -104,33 +111,6 @@ public class UserController implements Serializable {
         }
         logFacade.create(new Log("Wrong authorization probe of "+current.getLogin()+" from " + getIpRequest(),LoggerLevel.WARN));
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Не верный логин/пароль"));
-        return "";
-    }
-    
-    public String createUser() {
-        List<User> users = userFacade.findAll();
-        
-        setUpDefaultUsers();
-        if (created.getLogin().length()>3) {
-            users = userFacade.findAll();
-            boolean existing = false;
-            for (User user : users) {
-                if (user.getLogin().equals(created.getLogin())) {
-                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Такой логин уже зарегистрирован"));
-                    existing = true;
-                }
-            }
-            if (!existing) {
-                String generatedPassword=generatePassword();
-                created.setPassword(generatedPassword);
-                created.addMessage("Вы успешно авторизованы в системе. Приятного пользования!");
-                userFacade.create(created);
-                logFacade.create(new Log("Создан новый пользователь "+created.getLogin()+" "+getIpRequest()));
-                mailService.sendEmail(created.getEmail(), getMailBody(created,generatedPassword));
-            }
-        } else {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Надо больше букв в логине"));
-        }
         return "";
     }
     
@@ -165,9 +145,11 @@ public class UserController implements Serializable {
                     authReq.setLogin(current.getLogin());
                     authReq.setEmail(current.getEmail());
                     authReq.setAbout(current.getAbout());
-                    authReq.setPassword(generatePassword());
+                    String password=generatePassword();
+                    authReq.setPassword(password);
                     authReq.setUserRole(UserRole.USER);
                     authReq.addMessage("Вы подали заявку на регистрацию");
+                    mailService.sendEmail(current.getEmail(), MailTemplate.getHtml(current.getLogin(), password));
                     userFacade.create(authReq);}
                 }else{
                     FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Нужна информация о Вас!"));                    
@@ -204,11 +186,7 @@ public class UserController implements Serializable {
         }
         return str;
     }
-
-    private String getMailBody(User created, String generatedPassword) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+        
     private String getIpRequest(){
         HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
         String ipAddress = request.getHeader("X-FORWARDED-FOR");
@@ -218,6 +196,7 @@ public class UserController implements Serializable {
         
         return ipAddress;
     }
+    
     public User getCurrent() {
         if(current==null)current=new User();
         return current;
@@ -259,5 +238,7 @@ public class UserController implements Serializable {
         this.entered = entered;
     }
     
-    
+    public String getLores(){
+        return MailTemplate.lores;
+    }
 }

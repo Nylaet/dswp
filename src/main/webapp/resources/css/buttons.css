@@ -29,13 +29,12 @@
 	transition-duration: 1s;
 	transition-delay: 0s;
 	transition-timing-function: ease;
-	background-image: url("../resources/images/blank.gif");
 	border-width: 0px;
 	background-color: #00ACAC;
 	border-radius: 3px;
 	padding-bottom: 2px;
 	position: relative;
-	width: 16.25%;
+	width: 156px;
 	margin-left: 6.25%;
 }
 
@@ -43,7 +42,7 @@
 {
 	background-color: #007DAC;
 	min-height: 0px;
-	width: 16.25%;
+	width: 156px;
 	margin: 0px 0px 0px 6.25%;
 }
 
@@ -51,7 +50,7 @@
 {
 	background-color: #00ACAC;
 	min-height: 0px;
-	width: 16.25%;
+	width: 156px;
 	margin: 0px 0px 0px 6.25%;
 }
 
@@ -622,11 +621,6 @@
 #u726_img,#u834_img,#u752_img,#u776_img,#u801_img,#u817_img,#u848_img,#u865_img
 {
 	width: 100%;
-}
-
-#muse_css_mq,.html
-{
-	background-color: #FFFFFF;
 }
 
 body

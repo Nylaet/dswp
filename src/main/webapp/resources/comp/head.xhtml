@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        <title>Come to the Dark Side</title>
+        <h:outputStylesheet library="css" name="site_global.css" />
+        <h:outputStylesheet library="css" name="master-a.css" />
+        <h:outputStylesheet library="css" name="template.css" />
+        <h:outputStylesheet library="css" name="buttons.css" />
+        <h:outputStylesheet library="css" name="primefaces_embeded.css" />
+        <h:outputStylesheet library="css" name="departamentnavigation.css" />
+        <c:if test="#{!userController.entered}">
+            <meta http-equiv="refresh" content="0; url=index.xhtml?faces-redirect=true" />
+        </c:if>
+        <script src = "http://maps.google.com/maps/api/js?key=AIzaSyDzwk44zfDh3JQSN1ooK-SIXzvODeFo_dc"
+                type = "text/javascript" />
+    </cc:implementation>
+</html>

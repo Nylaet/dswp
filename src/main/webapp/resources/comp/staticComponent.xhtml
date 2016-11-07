@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        <div class="clearfix grpelem" id="pu554"><!-- group -->
+            <div id="u554"><!-- Left navigation frame -->
+
+            </div>
+            <div class="browser_width" id="u496-bw"><!-- Up menu frame -->
+                <div class="shadow" id="u496">
+                    <h:form>
+                        <h:commandLink action="home.xhtml?faces-redirect=true">
+                            <div class="clearfix" id="u483"><!-- Logo group -->
+                                <div class="clip_frame" id="u485"><!-- image -->
+                                    <img class="block" id="u485_img" src="resources/images/empty_logo.png" alt="" data-image-width="57" data-image-height="57"/>
+                                </div>
+                                <img id="u484-4" alt="Дикий Сад" src="resources/images/u484-4.png" data-image-width="126"/><!-- rasterized frame -->
+                            </div>
+                        </h:commandLink>
+                        <div class="clearfix grpelem" id="pu520"><!-- group -->
+                            <div class="clip_frame" id="u520"><!-- image -->
+                                <img class="block" id="u520_img" src="resources/images/settings.png" alt="" data-image-width="48" data-image-height="48"/>
+                            </div>
+                            <div class="clip_frame" id="u530"><!-- image -->
+                                <img class="block" id="u530_img" src="resources/images/message.png" alt="" data-image-width="48" data-image-height="48"/>
+                                <c:if test="#{userController.current.messages.size()>0}">
+                                    <h:outputText value="#{userController.current.messages.size()}" styleClass="messageInformer" />
+                                </c:if>
+                            </div>
+                        </div>
+                        <h:commandLink type="button" id="globalMenuIcon" >
+                            <div class="transition rounded-corners" id="u499" style="cursor: pointer" />
+                            <p:overlayPanel showEvent="mouseover" hideEvent="mouseleave" showEffect="highLight" hideEffect="explode" id="globalMenu" for="globalMenuIcon">
+                                <div class="Button transition clearfix colelem globalNavButton" id="maps"><!-- container box -->
+                                    <div class="clearfix grpelem" id="u957-4"><!-- content -->
+                                        <p><span id="u957">Карты</span></p>
+                                    </div>
+                                </div>
+                                <div class="Button transition clearfix colelem globalNavButton" id="wpeco"><!-- container box -->
+                                    <div class="clearfix grpelem" id="u969-4"><!-- content -->
+                                        <p><span id="u969">Wp Eco</span></p>
+                                    </div>
+                                </div>
+                                <div class="Button transition clearfix grpelem globalNavButton" id="techsupport"><!-- container box -->
+                                    <div class="clearfix grpelem" id="u1005-4"><!-- content -->
+                                        <p><span id="u1005">Тех. Поддержка</span></p>
+                                    </div>
+                                </div>
+                                <div class="buttonGlobalMenu TranformLeftToRight globalNavButton" id="admin"><!-- container box -->
+                                    <div class="clearfix grpelem" id="u1027-4"><!-- content -->
+                                        <p><span id="u1027">Администратор</span></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="Button transition clearfix colelem globalNavButton" id="developer"><!-- container box -->
+                                    <div class="clearfix grpelem" id="u1049-4"><!-- content -->
+                                        <p><span id="u1049">Developer</span></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="Button transition clearfix grpelem globalNavButton" id="logout"><!-- container box -->
+                                    <div class="clearfix grpelem" id="logoutText"><!-- content -->
+                                        <p><span id="u1005">Выйти</span></p>
+                                    </div>
+                                </div>
+                            </p:overlayPanel>
+                        </h:commandLink>
+
+                    </h:form>
+                </div>
+            </div>
+
+        </div>
+    </cc:implementation>
+</html>

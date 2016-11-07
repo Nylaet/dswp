@@ -1,0 +1,202 @@
+#growl_container .ui-state-highlight{
+    background: #aaa!important;
+    font-family: 'Roboto',sans-serif!important;
+}
+
+#growl_container .ui-growl-image{
+    background: url(../resources/images/icons/DarthVaderGrowl.png) no-repeat!important;
+    width: 64px!important;
+    height: 64px!important;
+}
+
+.outputPanel .ui-widget-header{
+    background: #2D353C!important;
+    margin: -2px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    border:none!important;
+}
+
+.outputPanel .ui-panel-titlebar-icon{
+    background: none!important;
+    border:none!important;
+    box-shadow: none!important;
+}
+
+.outputPanel{
+    max-width: calc( 100% - 45px );
+    min-width: 300px;
+    position: relative;
+    display: block;
+    float:left;
+    margin: 12px;
+    padding-bottom: 12px!important;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+}
+
+.size3{
+    width: 300px!important;
+    min-width: 300px!important;
+    max-width: 300px!important;
+}
+.size6{
+    width: 600px!important;
+    min-width: 600px!important;
+    max-width: 600px!important;
+}
+.size9{
+    width: 900px!important;
+    min-width: 900px!important;
+    max-width: 900px!important;
+}
+.sizeFull{
+    width: calc( 100% - 45px )!important;
+    min-width: calc( 100% - 45px )!important;
+    max-width: calc( 100% - 45px )!important;
+}
+
+.messageInformer{
+    border: 1px black solid;
+    position: fixed;
+    z-index: 20;
+    color: white;
+    border-radius: 1000px;
+    background: gray;
+    width: 17px;
+    text-align: center;
+    top: 45px;
+    font-weight: bold;
+}
+
+.formInput{
+    color: gray;
+    margin: 3px;
+    border: 1px lightgrey solid;
+    padding-left: 12px;
+    border-radius: 5px;
+    position: relative;
+    float: left;    
+}
+
+.inputPanel .ui-widget-header{
+    background: none!important;
+    color: gray!important;
+    border-bottom: 1px lightgray solid!important;
+}
+
+.inputPanel{
+    position: relative;
+    border:none;    
+    max-width: 285px;
+}
+
+.button
+{
+    z-index: 2;
+    -webkit-transition-duration: 1s;
+    -webkit-transition-delay: 0s;
+    -webkit-transition-timing-function: ease;
+    transition-duration: 1s;
+    transition-delay: 0s;
+    transition-timing-function: ease;
+    border-width: 0px;
+    background-color: #00ACAC;
+    border-radius: 3px;
+    padding-bottom: 4px;
+    position: relative;
+    width: 156px;
+    float: right;
+    margin-top:5px;        
+}
+
+.button:hover
+{
+    background-color: #007DAC;
+    min-height: 0px;
+    width: 156px;
+    margin: 0px 0px 0px 6.25%;
+    margin-top:5px;
+}
+
+.ui-overlaypanel-content{
+    position: fixed;
+    right: 10px;
+    top: 75px;
+    background: white;
+    border: 1px gray solid;
+    min-width: 368px;
+    max-width: 552px;
+}
+
+.newsText{
+    
+}
+
+.newsImage{
+    float:left;
+    max-width: 180px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+
+.newsPanel{
+    border: none;
+}
+
+.newsPanel .ui-widget-header{
+    background: none!important;
+    color: gray!important;
+    border-bottom: 1px lightgray solid!important;
+}
+
+.chartPanel{
+    border: none;
+}
+
+.chartPanel .ui-widget-header{
+    background: none!important;
+    color: gray!important;
+    border-bottom: 1px lightgray solid!important;
+}
+
+.chart{
+    margin-bottom: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.chartText{
+    margin-top: 12px;
+}
+
+.mapOutput{
+    width: 80%;
+    min-height: 290px;
+    margin: auto;
+}
+
+.withForm{
+    width: 250px;
+    height: 250px;
+    float:left;
+    margin: 10px 12px 10px 12px;
+}
+.floatRight{
+    float:right;
+}
+
+.dataTable .ui-datatable-header{
+    background: none!important;
+    color: gray!important;
+    border-bottom: 1px lightgray solid!important;
+    margin-bottom: 3px;
+}
+
+.dataTable .ui-state-default{
+    background: lightgray!important;    
+}
+
+.buttonColumn{
+    max-width: 180px;
+}

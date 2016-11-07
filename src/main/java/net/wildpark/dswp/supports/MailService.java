@@ -36,9 +36,8 @@ public class MailService implements Serializable {
             HtmlEmail email = new HtmlEmail();
             email.setCharset("utf-8");
             email.setHostName("mail.wildpark.net");
-            email.setSmtpPort(587);
+            email.setSmtpPort(25);
             email.setAuthenticator(new DefaultAuthenticator("informer@mksat.net", "22v5C728"));
-            email.setTLS(true);
             email.setFrom("informer@mksat.net");
             email.setSubject("Automatic message from darkside.wildpark.net");
             email.setHtmlMsg(textBody);
@@ -46,7 +45,8 @@ public class MailService implements Serializable {
             email.send();
             logFacade.create(new Log("Sended mail " +  to));
         } catch (EmailException ex) {
-            logFacade.create(new Log("Error whid mail sending", ex,LoggerLevel.ERROR));
+            logFacade.create(new Log("Error with mail sending", ex,LoggerLevel.ERROR));
+            System.out.println(ex);
             return false;
         }
         return true;
