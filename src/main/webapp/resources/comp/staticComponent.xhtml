@@ -8,13 +8,20 @@
 
     <!-- INTERFACE -->
     <cc:interface>
+        <cc:attribute name="leftMenu" default="empty" />
     </cc:interface>
 
     <!-- IMPLEMENTATION -->
     <cc:implementation>
         <div class="clearfix grpelem" id="pu554"><!-- group -->
-            <div id="u554"><!-- Left navigation frame -->
-
+            <p:growl autoUpdate="true" id="growl" />
+            <h:outputStylesheet library="css" name="leftNavMenu.css" />
+            <div id="u554" style="padding-top: 100px;"><!-- Left navigation frame -->
+                <div class="leftNavMenu"><!-- container box -->
+                    <div class="clearfix grpelem" id="u1103-4"><!-- content -->
+                        
+                    </div>
+                </div>
             </div>
             <div class="browser_width" id="u496-bw"><!-- Up menu frame -->
                 <div class="shadow" id="u496">
@@ -22,17 +29,17 @@
                         <h:commandLink action="home.xhtml?faces-redirect=true">
                             <div class="clearfix" id="u483"><!-- Logo group -->
                                 <div class="clip_frame" id="u485"><!-- image -->
-                                    <img class="block" id="u485_img" src="resources/images/empty_logo.png" alt="" data-image-width="57" data-image-height="57"/>
+                                    <h:graphicImage library="images" name="empty_logo.png" styleClass="block" id="u485_img" style="width: 57px; height: 57px;" />                                    
                                 </div>
-                                <img id="u484-4" alt="Дикий Сад" src="resources/images/u484-4.png" data-image-width="126"/><!-- rasterized frame -->
+                                <h:graphicImage library="images" name="u484-4.png" id="u484-4" style="width: 126px" />                                
                             </div>
                         </h:commandLink>
                         <div class="clearfix grpelem" id="pu520"><!-- group -->
                             <div class="clip_frame" id="u520"><!-- image -->
-                                <img class="block" id="u520_img" src="resources/images/settings.png" alt="" data-image-width="48" data-image-height="48"/>
+                                <h:graphicImage library="images" name="settings.png" id="u520_img" styleClass="block" style="width:48px;height: 48px;" />
                             </div>
                             <div class="clip_frame" id="u530"><!-- image -->
-                                <img class="block" id="u530_img" src="resources/images/message.png" alt="" data-image-width="48" data-image-height="48"/>
+                                <h:graphicImage library="images" name="message.png" id="u530_img" styleClass="block" style="width:48px;height: 48px;" />
                                 <c:if test="#{userController.current.messages.size()>0}">
                                     <h:outputText value="#{userController.current.messages.size()}" styleClass="messageInformer" />
                                 </c:if>
@@ -40,7 +47,7 @@
                         </div>
                         <h:commandLink type="button" id="globalMenuIcon" >
                             <div class="transition rounded-corners" id="u499" style="cursor: pointer" />
-                            <p:overlayPanel showEvent="mouseover" hideEvent="mouseleave" showEffect="highLight" hideEffect="explode" id="globalMenu" for="globalMenuIcon">
+                            <p:overlayPanel showEvent="mouseover" hideEvent="mouseleave" id="globalMenu" for="globalMenuIcon">
                                 <div class="Button transition clearfix colelem globalNavButton" id="maps"><!-- container box -->
                                     <div class="clearfix grpelem" id="u957-4"><!-- content -->
                                         <p><span id="u957">Карты</span></p>
@@ -61,13 +68,13 @@
                                         <p><span id="u1027">Администратор</span></p>
                                     </div>
                                 </div>
-                                
+
                                 <div class="Button transition clearfix colelem globalNavButton" id="developer"><!-- container box -->
                                     <div class="clearfix grpelem" id="u1049-4"><!-- content -->
                                         <p><span id="u1049">Developer</span></p>
                                     </div>
                                 </div>
-                                
+
                                 <div class="Button transition clearfix grpelem globalNavButton" id="logout"><!-- container box -->
                                     <div class="clearfix grpelem" id="logoutText"><!-- content -->
                                         <p><span id="u1005">Выйти</span></p>

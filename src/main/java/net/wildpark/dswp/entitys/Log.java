@@ -38,22 +38,26 @@ public class Log implements Serializable {
     public Log(String text) {
         this.text = text;
         loggerLevel=LoggerLevel.INFO;
+        added=new Date();
     }
 
     public Log(String text, LoggerLevel loggerLevel) {
         this.text = text;
         this.loggerLevel = loggerLevel;
+        added=new Date();
     }
 
     public Log(String text, Exception exception, LoggerLevel loggerLevel) {
         this.text = text;
         this.errorType = exception;
         this.loggerLevel = loggerLevel;
+        added=new Date();
     }
 
     public Log(Exception exception) {
         text=errorType.getMessage();
         this.errorType = exception;
+        added=new Date();
     }
     
     
@@ -90,6 +94,7 @@ public class Log implements Serializable {
     
     public String getDateAsString(){
         SimpleDateFormat dateFormat=new SimpleDateFormat("dd-MM-yy HH:mm");
+        if(added==null)return "Не известно";
         return dateFormat.format(added);
     }
 

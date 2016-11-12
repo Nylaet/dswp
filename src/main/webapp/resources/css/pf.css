@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09.11.2016, 12:18:03
+    Author     : Panker-RDP
+*/
+
+
+.ui-accordion.navMenu .ui-accordion-header.navMenu .ui-icon.navMenu{
+    position: absolute;
+    left:initial;
+    right: 20px;
+    top: 40%;
+    
+    }
+.ui-state-default.navMenu{
+    box-shadow: none;
+}
+.ui-state-default.navMenu .ui-icon.navMenu{
+    background-image: url('../resources/images/icons/down.png');
+    background-position: initial;
+    width: 24px;
+    height: 24px;
+}
+
+
+.ui-state-default.navMenu .ui-state-active.navMenu .ui-icon.navMenu{
+    background-image: url('../resources/images/icons/up.png');
+    box-shadow: none;
+}
+
+.ui-state-hover{
+    box-shadow: none;
+}
+
+.navMenu{
+    width: 300px;
+    background-color: transparent;
+}
+
+.ui-accordion .ui-state-default{
+    background: none;
+}
+
+body{
+    background-color: lightgray;
+}
+
+
+
+
+
+

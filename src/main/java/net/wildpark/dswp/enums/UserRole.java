@@ -10,7 +10,7 @@ package net.wildpark.dswp.enums;
  * @author Panker-RDP
  */
 public enum UserRole {
-    DEVELOPER("Разработчик"),ADMIN("Администратор"),USER("Пользователь");
+    DEVELOPER("Разработчик"),ADMIN("Администратор"),USER("Пользователь"),GUEST("Гость");
     private String about;
 
     private UserRole(String about) {

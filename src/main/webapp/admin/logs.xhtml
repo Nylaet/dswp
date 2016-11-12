@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:comp="http://xmlns.jcp.org/jsf/composite/comp"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <comp:head />
+    </h:head>
+    <h:body>
+        <comp:staticComponent />
+        <div id="content" style="position: absolute;top:80px;left:300px;max-width: calc( 100% - 300px );" >
+            <p:panel styleClass="outputPanel sizeFull" header="Лог портала" toggleable="true">
+                <h:form>
+                    <p:dataTable styleClass="dataTable" var="log" value="#{logsPageController.logs}" widgetVar="logTable"
+                                 emptyMessage="Нет данных" filteredValue="#{logsPageController.filteredLogs}">
+                        <f:facet name="header">
+                            <p:outputPanel>
+                                <h:outputText value="Найти:" />
+                                <p:inputText id="globalFilter" onkeyup="PF('logTable').filter()" style="width: 150px" placeholder="Выражение" />
+                            </p:outputPanel>
+                        </f:facet>
+
+                        <p:column filterBy="#{log.dateAsString}" headerText="Дата" filterMatchMode="contains">
+                            <h:outputText value="#{log.dateAsString}" />
+                        </p:column>
+                        <p:column filterBy="#{log.text}" headerText="Сообщение" filterMatchMode="contains">
+                            <h:outputText value="#{log.text}" />
+                        </p:column>
+                        <p:column filterBy="#{log.exception.message}" headerText="Ошибка" filterMatchMode="contains">
+                            <h:outputText value="#{log.exception.message}" />
+                        </p:column>
+                        <p:column filterBy="#{log.loggerLevel.about}" headerText="Уровень" filterMatchMode="in">
+                            <f:facet name="filter">
+                                <p:selectCheckboxMenu label="Levels" onchange="PF('logTable').filter()">
+                                    <f:selectItems value="#{logsPageController.levels()}" />
+                                </p:selectCheckboxMenu>
+                            </f:facet>
+                            <h:outputText value="#{log.loggerLevel.about}" />
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+            </p:panel>
+        </div>
+    </h:body>
+</html>
+
