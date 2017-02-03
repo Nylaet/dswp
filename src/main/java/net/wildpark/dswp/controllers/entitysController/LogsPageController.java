@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.wildpark.dswp.controllers;
+package net.wildpark.dswp.controllers.entitysController;
 
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -12,12 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import net.wildpark.dswp.controllers.entitysController.UserController;
 import net.wildpark.dswp.entitys.Log;
 import net.wildpark.dswp.enums.LoggerLevel;
-import net.wildpark.dswp.enums.UserRole;
 import net.wildpark.dswp.facades.LogFacade;
 
 /**

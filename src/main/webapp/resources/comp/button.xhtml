@@ -8,17 +8,18 @@
     <cc:interface>
         <cc:attribute name="actionButton" />
         <cc:attribute name="actionDestination" method-signature="java.lang.Object action()" default="#"/>
+        <cc:attribute name="refresh" default="@all" />
     </cc:interface>
 
     <!-- IMPLEMENTATION -->
     <cc:implementation>
-        <p:commandLink actionListener="#{cc.attrs.actionDestination}" update="@all" >
+        <p:commandLink actionListener="#{cc.attrs.actionDestination}" update="#{cc.attrs.refresh}" >
             <div class="Button transition rounded-corners clearfix colelem button"  ><!-- container box -->
                 <div class="clearfix grpelem" id="u728-4"><!-- content -->
                     <p>#{buttonsViewController.getButtonTitle(cc.attrs.actionButton)}</p>
                 </div>
                 <div class="clip_frame grpelem" id="u726"><!-- image -->
-                    <img class="block" id="u726_img" src="resources/images/#{buttonsViewController.getImageName(cc.attrs.actionButton)}.png" alt="" data-image-width="20" data-image-height="20"/>
+                    <img class="block" id="u726_img" src="../resources/images/#{buttonsViewController.getImageName(cc.attrs.actionButton)}.png" alt="" data-image-width="20" data-image-height="20"/>
                 </div>
             </div>
         </p:commandLink>

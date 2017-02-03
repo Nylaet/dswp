@@ -13,96 +13,98 @@
         <div class="clearfix borderbox" id="page"><!-- group -->
             <comp:staticComponent/>
             <div id="content" style="position: absolute;top:80px;left:300px;max-width: calc( 100% - 300px );" >
-                <p:panel styleClass="outputPanel size3" header="Form" toggleable="true" collapsed="true">
-                    <p:panel styleClass="inputPanel" header="Some form about">
-                        <h:form>
-                            <h:inputText value="#{userController.created}" id="textInput" styleClass="formInput" />
-                            <h:inputSecret value="#{userController.pass}" id="passwordInput" styleClass="formInput" />
-                            <p:watermark for="textInput" value="Some text input" />
-                            <p:watermark for="passwordInput" value="Some password input" />
-                            <div id="verticalSpacer" style="height: 20px;float:left;clear:both;" />
-                            <comp:button actionButton="Accept" /> 
-                            <comp:button actionButton="Decline" /> 
-                        </h:form>
+                <h:form>
+                    <p:panel styleClass="outputPanel size3" header="Form" toggleable="true" collapsed="true">
+                        <p:panel styleClass="inputPanel" header="Some form about">
+                            <h:form>
+                                <h:inputText value="#{userController.created}" id="textInput" styleClass="formInput" />
+                                <h:inputSecret value="#{userController.pass}" id="passwordInput" styleClass="formInput" />
+                                <p:watermark for="textInput" value="Some text input" />
+                                <p:watermark for="passwordInput" value="Some password input" />
+                                <div id="verticalSpacer" style="height: 20px;float:left;clear:both;" />
+                                <comp:button actionButton="Accept" /> 
+                                <comp:button actionButton="Decline" /> 
+                            </h:form>
+                        </p:panel>
                     </p:panel>
-                </p:panel>
-                <p:panel styleClass="outputPanel size6" header="News" toggleable="true" collapsed="true" >
-                    <p:panel styleClass="newsPanel" header="Some news">
-                        <h:graphicImage styleClass="newsImage" library="images" name="noimage.gif" />
-                        <h:outputText value="#{userController.lores}" styleClass="newsText" />
+                    <p:panel styleClass="outputPanel size6" header="News" toggleable="true" collapsed="true" >
+                        <p:panel styleClass="newsPanel" header="Some news">
+                            <h:graphicImage styleClass="newsImage" library="images" name="noimage.gif" />
+                            <h:outputText value="#{userController.lores}" styleClass="newsText" />
+                        </p:panel>
+
+                    </p:panel>
+                    <p:panel styleClass="outputPanel size6" header="Chart" toggleable="true" collapsed="true">
+                        <p:panel styleClass="chartPanel" header="Chart about">
+                            <p:chart type="line" model="#{templateController.chart}" styleClass="chart" />  
+                            <h:outputText value="#{userController.lores}" styleClass="chartText" />
+                        </p:panel>
                     </p:panel>
 
-                </p:panel>
-                <p:panel styleClass="outputPanel size6" header="Chart" toggleable="true" collapsed="true">
-                    <p:panel styleClass="chartPanel" header="Chart about">
-                        <p:chart type="line" model="#{templateController.chart}" styleClass="chart" />  
-                        <h:outputText value="#{userController.lores}" styleClass="chartText" />
+                    <p:panel styleClass="outputPanel sizeFull" header="Map" toggleable="true" collapsed="true">
+                        <p:gmap center="46.968112,31.9782571" zoom="17" model="#{templateController.mapModel}"
+                                type="terrain" draggable="true" disableDefaultUI="true" styleClass="mapOutput" />
                     </p:panel>
-                </p:panel>
-
-                <p:panel styleClass="outputPanel sizeFull" header="Map" toggleable="true" collapsed="true">
-                    <p:gmap center="46.968112,31.9782571" zoom="17" model="#{templateController.mapModel}"
-                            type="terrain" draggable="true" disableDefaultUI="true" styleClass="mapOutput" />
-                </p:panel>
-                <p:panel styleClass="outputPanel size6" header="Map" toggleable="true" collapsed="true">
-                    <p:gmap center="46.968112,31.9782571" zoom="17" model="#{templateController.mapModel}"
-                            type="terrain" draggable="true" disableDefaultUI="true" styleClass="mapOutput withForm" />
-                    <p:panel styleClass="inputPanel floatRight" header="Map edit form">
-                        <h:form>
-                            <h:inputText value="#{userController.created}" id="textInput" styleClass="formInput" />
-                            <h:inputSecret value="#{userController.pass}" id="passwordInput" styleClass="formInput" />
-                            <p:watermark for="textInput" value="Some text input" />
-                            <p:watermark for="passwordInput" value="Some password input" />
-                            <div id="verticalSpacer" style="height: 20px;float:left;clear:both;" />
-                            <comp:button actionButton="Accept" /> 
-                            <comp:button actionButton="Decline" /> 
-                        </h:form>
+                    <p:panel styleClass="outputPanel size6" header="Map" toggleable="true" collapsed="true">
+                        <p:gmap center="46.968112,31.9782571" zoom="17" model="#{templateController.mapModel}"
+                                type="terrain" draggable="true" disableDefaultUI="true" styleClass="mapOutput withForm" />
+                        <p:panel styleClass="inputPanel floatRight" header="Map edit form">
+                            <h:form>
+                                <h:inputText value="#{userController.created}" id="textInput" styleClass="formInput" />
+                                <h:inputSecret value="#{userController.pass}" id="passwordInput" styleClass="formInput" />
+                                <p:watermark for="textInput" value="Some text input" />
+                                <p:watermark for="passwordInput" value="Some password input" />
+                                <div id="verticalSpacer" style="height: 20px;float:left;clear:both;" />
+                                <comp:button actionButton="Accept" /> 
+                                <comp:button actionButton="Decline" /> 
+                            </h:form>
+                        </p:panel>
                     </p:panel>
-                </p:panel>
-                <p:panel styleClass="outputPanel size9" header="nav" toggleable="true" collapsed="true">
+                    <p:panel styleClass="outputPanel size9" header="nav" toggleable="true" collapsed="true">
 
-                    <div class="Button transition clearfix colelem globalNavButton" id="maps"><!-- container box -->
-                        <div class="clearfix grpelem" id="u957-4"><!-- content -->
-                            <p><span id="u957">Карты</span></p>
+                        <div class="Button transition clearfix colelem globalNavButton" id="maps"><!-- container box -->
+                            <div class="clearfix grpelem" id="u957-4"><!-- content -->
+                                <p><span id="u957">Карты</span></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="buttonGlobalMenu TranformLeftToRight globalNavButton" id="admin"><!-- container box -->
-                        <div class="clearfix grpelem" id="u1027-4"><!-- content -->
-                            <p><span id="u1027">Администратор</span></p>
+                        <div class="buttonGlobalMenu TranformLeftToRight globalNavButton" id="admin"><!-- container box -->
+                            <div class="clearfix grpelem" id="u1027-4"><!-- content -->
+                                <p><span id="u1027">Администратор</span></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="Button transition clearfix colelem globalNavButton" id="wpeco"><!-- container box -->
-                        <div class="clearfix grpelem" id="u969-4"><!-- content -->
-                            <p><span id="u969">Wp Eco</span></p>
+                        <div class="Button transition clearfix colelem globalNavButton" id="wpeco"><!-- container box -->
+                            <div class="clearfix grpelem" id="u969-4"><!-- content -->
+                                <p><span id="u969">Wp Eco</span></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="Button transition clearfix colelem globalNavButton" id="developer"><!-- container box -->
-                        <div class="clearfix grpelem" id="u1049-4"><!-- content -->
-                            <p><span id="u1049">Developer</span></p>
+                        <div class="Button transition clearfix colelem globalNavButton" id="developer"><!-- container box -->
+                            <div class="clearfix grpelem" id="u1049-4"><!-- content -->
+                                <p><span id="u1049">Developer</span></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="Button transition clearfix grpelem globalNavButton" id="techsupport"><!-- container box -->
-                        <div class="clearfix grpelem" id="u1005-4"><!-- content -->
-                            <p><span id="u1005">Тех. Поддержка</span></p>
+                        <div class="Button transition clearfix grpelem globalNavButton" id="techsupport"><!-- container box -->
+                            <div class="clearfix grpelem" id="u1005-4"><!-- content -->
+                                <p><span id="u1005">Тех. Поддержка</span></p>
+                            </div>
                         </div>
-                    </div>
 
-                </p:panel>
-                <p:panel styleClass="outputPanel size6" toggleable="true" header="Messages Tables">
-                    <p:dataTable var="msg" value="#{userController.current.messages}" styleClass="dataTable">
-                        <f:facet name="header">
-                            <h:outputText value="Сообщения" />
-                        </f:facet>
-                        <p:column headerText="Сообщение" >
-                            <h:outputText value="#{msg}" />
-                        </p:column>
-                        <p:column styleClass="buttonColumn" >
-                            <comp:button actionButton="Del" actionDestination="#{userController.current.messages.remove(msg)}" />
-                        </p:column>
-                        
-                    </p:dataTable> 
-                    <comp:button actionButton="Edit" actionDestination="#{userController.saveChanges()}" />
-                </p:panel>
+                    </p:panel>
+                    <p:panel styleClass="outputPanel size6" toggleable="true" header="Messages Tables">
+                        <p:dataTable var="msg" value="#{userController.current.messages}" styleClass="dataTable">
+                            <f:facet name="header">
+                                <h:outputText value="Сообщения" />
+                            </f:facet>
+                            <p:column headerText="Сообщение" >
+                                <h:outputText value="#{msg}" />
+                            </p:column>
+                            <p:column styleClass="buttonColumn" >
+                                <comp:button actionButton="Del" actionDestination="#{userController.current.messages.remove(msg)}" />
+                            </p:column>
+
+                        </p:dataTable> 
+                        <comp:button actionButton="Edit" actionDestination="#{userController.saveChanges()}" />
+                    </p:panel>
+                </h:form>
             </div>
 
             <div class="verticalspacer"></div>

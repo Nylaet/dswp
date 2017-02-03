@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="js html" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:comp="http://xmlns.jcp.org/jsf/composite/comp"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <comp:head />
+    </h:head>
+    <h:body>
+        <div class="clearfix borderbox" id="page">
+            <comp:staticComponent/>
+            <div id="content" style="position: absolute;top:80px;left:300px;max-width: calc( 100% - 300px );" >
+                <h:form>
+                    <p:panel styleClass="outputPanel size6" toggleable="true" header="Messages Tables">
+                        <p:dataTable var="msg" value="#{userController.current.messages}" styleClass="dataTable">
+                            <f:facet name="header">
+                                <h:outputText value="Сообщения" />
+                            </f:facet>
+                            <p:column headerText="Сообщение" >
+                                <h:outputText value="#{msg}" />
+                            </p:column>
+                            <p:column styleClass="buttonColumn" >
+                                <comp:button actionButton="Del" actionDestination="#{userController.current.messages.remove(msg)}" />
+                            </p:column>
+
+                        </p:dataTable> 
+                        <comp:button actionButton="Edit" actionDestination="#{userController.saveChanges()}" />
+                    </p:panel>
+                </h:form>
+            </div>
+        </div>
+    </h:body>
+</html>
+

@@ -8,6 +8,7 @@
         <h:outputStylesheet library="css" name="index.css" />
         <h:outputStylesheet library="css" name="site_global.css" />
         <h:outputStylesheet library="css" name="primefaces_embeded.css" />
+        <meta http-equiv="refresh" content="10; url=index.xhtml?faces-redirect=true" />
     </h:head>
     <h:body>
         <div class="clearfix borderbox" id="page"><!-- group -->
@@ -18,29 +19,27 @@
             <div id="u326"><!-- simple frame --></div>
             <h:form>
                 <div class="rounded-corners clearfix" id="u346-5"><!-- content -->
-                    <h:inputText id="login" value="#{userController.current.login}" class="form_text_input" />
-                    <p:watermark for="login" value="Логин" />
+                    <h:outputText value="Время Вашей сессии окончено. Вы будете
+                                  перенаправлены на страницу авторизации" styleClass="form_text_input" style="color:red;text-align: center;" />                                     
                 </div>
                 <div class="clearfix" id="u480"><!-- group -->
+                    <div class="clip_frame" id="u332"><!-- image -->
+                        <img class="block" id="u332_img" src="resources/images/empty_logo.png" alt="" data-image-width="113" data-image-height="113"/>
+                    </div>
                     <img id="u342-4" alt="Дикий Сад" src="resources/images/u342-4.png" data-image-width="246"/><!-- rasterized frame -->
-                </div>
-                <div class="rounded-corners clearfix" id="u351-4"><!-- content -->
-                    <h:inputSecret id="pass" value="#{userController.current.password}" class="form_text_input" />
-                    <p:watermark for="pass" value="Пароль" />
                 </div>
                 <div class="Button transition rounded-corners clearfix" id="buttonu370"><!-- container box -->
                     <div class="clip_frame grpelem" id="u379"><!-- image -->
                         <img class="block" id="u379_img" src="resources/images/user.png" alt="" data-image-width="24" data-image-height="24"/>
                     </div>
-                    <h:commandLink action="#{userController.login()}"> 
+                    <h:commandLink action="index.xhtml"> 
                         <div class="clearfix grpelem" id="u381-4"><!-- content -->
-                            <p><span id="u381">Войти</span></p>
+                            <p><span id="u381">Не хочу ждать</span></p>
                         </div>
                     </h:commandLink>
 
                 </div>
             </h:form>
-            <a class="nonblock nontext Button transition rounded-corners clearfix" id="buttonu396" href="authorization.xhtml?faces-redirect=true"><!-- container box --><div class="clip_frame grpelem" id="u397"><!-- image --><img class="block" id="u397_img" src="resources/images/user_plus.png" alt="" data-image-width="24" data-image-height="24"/></div><div class="clearfix grpelem" id="u399-4"><!-- content --><p><span id="u399">Зарегистрироваться</span></p></div></a>
             <div class="verticalspacer"></div>
         </div>
     </h:body>

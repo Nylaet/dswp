@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="js html" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:comp="http://xmlns.jcp.org/jsf/composite/comp"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <comp:head/>
+    </h:head>
+    <h:body>
+        <div class="clearfix borderbox" id="page">
+            <comp:staticComponent />
+            <div id="content" style="position: absolute;top:80px;left:300px;max-width: calc( 100% - 300px );" >
+                <h:form>
+                    <p:panel styleClass="outputPanel size3" header="Генератор объектов" toggleable="true" collapsed="false">                        
+                            <p:panel styleClass="inputPanel" header="Колличество объектов">
+                                <h:form>
+                                    <h:inputText value="#{gmController.count}" id="textInput" styleClass="formInput" />
+                                    <p:watermark for="textInput" value="Колличество объектов" />
+                                    <div id="verticalSpacer" style="height: 20px;float:left;clear:both;" />
+                                    <comp:button actionButton="Accept"  /> 
+                                    <comp:button actionButton="Decline" /> 
+                                </h:form>
+                            </p:panel>                        
+                    </p:panel>
+                    <p:panel id="output" styleClass="outputPanel sizefull" header="Генератор объектов" toggleable="true" collapsed="false">
+                        <div style="height: 24px;width: 255px;margin: auto;margin-bottom: 50px;">
+
+                            <h:panelGrid columns="2">
+                                <h:outputText value="Объекты" />
+                                <h:inputText value="#{gmController.count}" />                    
+                            </h:panelGrid>
+
+                        </div>
+                        <div style="height: 600px;width: 800px; margin: auto;">
+                            <p:gmap zoom="12" center="46.95694118331636,32.01210021972656" model="#{gmController.testsMarkers}" type="terrain" style="width: 100%;height: 100%"  />
+                        </div>
+                    </p:panel>
+                </h:form>
+            </div>
+        </div>
+
+    </h:body>
+</html>
+

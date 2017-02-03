@@ -130,7 +130,7 @@
 }
 
 .newsText{
-    
+
 }
 
 .newsImage{
@@ -199,4 +199,20 @@
 
 .buttonColumn{
     max-width: 180px;
+}
+
+#globalMenu{
+    position: absolute;
+    bottom:0px!important;
+    right: 300px;
+}
+
+.globalMenuIcon{
+    z-index: 11;
+    height: 60px;
+    position: fixed;
+    top: 6px;
+    right: 25px;
+    width: 6.25%;
+    max-width: 60px;
 }

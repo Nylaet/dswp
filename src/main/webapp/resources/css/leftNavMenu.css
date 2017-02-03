@@ -1,18 +1,30 @@
-.leftNavMenu{
-        transition-duration: 1s;
-    transition-delay: 0s;
-    transition-timing-function: ease;
-    border-width: 0px;
+
+.leftMenuItem{
+    width: 292px;
+    height: 35px;
+    background-color: #49535C;
+    border:2px #1A242D solid;
     position: relative;
-    width: 300px;
-    background: #2D353C url("../resources/images/bg/leftmenu-bg.png") no-repeat right center;
+    clear: both;
+    margin: 2px;
+    text-align: center;
 }
 
-.leftNavMenu:hover{
-    background-position: left center;
+.leftMenuItem:hover{
+    background-color: #637079;
+    border:2px #49535C solid;
+    border-radius: 5px;
+    background-image: url('../resources/images/icons/arrow-left-b.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: right center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-body{
-    background-color: lightgray;
+.leftMenuItemText{
+    color: white;
+    margin: auto;
+    top:8px;
+    position: relative;
+    white-space: nowrap;
 }
-

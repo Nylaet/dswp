@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.wildpark.dswp.controllers;
+package net.wildpark.dswp.controllers.entitysController;
 
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import javax.annotation.PostConstruct;
@@ -17,6 +18,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import net.wildpark.dswp.controllers.applicationScopeControllers.UsersAllController;
 import net.wildpark.dswp.entitys.Log;
 import net.wildpark.dswp.entitys.User;
 import net.wildpark.dswp.enums.LoggerLevel;
@@ -41,13 +43,17 @@ public class UserController implements Serializable {
     private LogFacade logFacade;
     @Inject
     private MailService mailService;
+    @Inject
+    UsersAllController uac;
     
     private User current;
     private User created;
     private String pass;
     private String repeatPass;
     private boolean entered;
-    
+    private boolean adminRole=false;
+    private List <User> users=new ArrayList<>();
+    private List <User> filteredUsers=new ArrayList<>();
     
     public UserController() {
     }
@@ -69,7 +75,7 @@ public class UserController implements Serializable {
             newUser.setLogin("panker");
             newUser.setEmail("nylaet@gmail.com");
             newUser.setPhone("+380664119956");
-            newUser.setUserRole(UserRole.DEVELOPER);
+            newUser.setUserRole(UserRole.ADMIN);
             newUser.addMessage("Создан системой автоматически");
             newUser.setWaitingAutorization(false);
             userFacade.create(newUser);
@@ -79,7 +85,7 @@ public class UserController implements Serializable {
             newUser.setPassword("Eco24165Eco");
             newUser.setEmail("drizer@gmail.com");
             newUser.setPhone("+380512000000");
-            newUser.setUserRole(UserRole.DEVELOPER);
+            newUser.setUserRole(UserRole.ADMIN);
             newUser.setWaitingAutorization(false);
             userFacade.create(newUser);
             users.add(newUser);
@@ -105,6 +111,7 @@ public class UserController implements Serializable {
 
                     HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
                     session.setAttribute("current", current);
+                    uac.addSession(session.getId(), user);
                     return "home.xhtml?faces-redirect=true";
                 }
             }
@@ -112,6 +119,13 @@ public class UserController implements Serializable {
         logFacade.create(new Log("Wrong authorization probe of "+current.getLogin()+" from " + getIpRequest(),LoggerLevel.WARN));
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Не верный логин/пароль"));
         return "";
+    }
+    
+    public String logout(){
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        current=new User();
+        entered=false;
+        return"index.xhtml?faces-redirect=true";
     }
     
     public String updatePassword() {
@@ -241,4 +255,38 @@ public class UserController implements Serializable {
     public String getLores(){
         return MailTemplate.lores;
     }
+
+    public boolean isAdminRole() {
+        return(current.getUserRole().equals(UserRole.ADMIN));
+    }
+
+    public void setAdminRole(boolean adminRole) {
+        this.adminRole = adminRole;
+    }
+
+    public List<User> getUsers() {
+        users=userFacade.findAll();
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public List<User> getFilteredUsers() {
+        return filteredUsers;
+    }
+
+    public void setFilteredUsers(List<User> filteredUsers) {
+        this.filteredUsers = filteredUsers;
+    }
+    
+    public void saveUsersChanges(){
+        for (User user : users) {
+            userFacade.edit(user);
+        }
+        logFacade.create(new Log(current.getLogin()+" внес изменения в базу пользователей"));
+    }
+    
+    
 }

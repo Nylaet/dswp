@@ -4,13 +4,13 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Facelet Title</title>
-
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
-
+        <style type="text/css">
+            ${demo.css}
+        </style>
     </h:head>
     <h:body>
-        <script src="https://code.highcharts.com/stock/highstock.js"></script>
-        <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
         <h:outputScript library="scripts" name="hCharts.js" /> 
         <div id="container" style="height: 400px; min-width: 310px"></div>
        
