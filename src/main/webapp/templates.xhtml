@@ -104,6 +104,9 @@
                         </p:dataTable> 
                         <comp:button actionButton="Edit" actionDestination="#{userController.saveChanges()}" />
                     </p:panel>
+                    <p:panel styleClass="outputPanel size6" toggleable="true" header="QR">
+                        <p:barcode value="ESP_48:50:73:02:7c:ec" type="qr" />
+                    </p:panel>
                 </h:form>
             </div>
 

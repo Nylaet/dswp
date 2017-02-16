@@ -29,7 +29,7 @@
             <div class="browser_width" id="u496-bw"><!-- Up menu frame -->
                 <div class="shadow" id="u496">
                     <h:form>
-                        <p:commandLink type="button" id="globalButton">
+                        <p:commandLink type="button" id="globalButton" >
                             <div class="clearfix" id="u483"><!-- Logo group -->
                                 <h:graphicImage library="images" name="u484-4.png" id="u484-4" style="width: 126px" />                                
                             </div>
@@ -50,6 +50,7 @@
                         <p:commandLink type="button" id="chatIcon"  >
                             <div class="transition rounded-corners" id="u499" style="cursor: pointer" />                            
                         </p:commandLink>
+                        <!-- Not needed yet
                         <p:menu overlay="true" my="left top" at="top right" trigger="globalButton" id="globalMenu" >
                             <p:menuitem action="/maps/index.xhtml?faces-redirect=true">
                                 <div class="Button transition clearfix colelem globalNavButton" id="maps">
@@ -65,13 +66,7 @@
                                     </div>
                                 </div>
                             </p:menuitem>
-                            <p:menuitem action="#">
-                                <div class="Button transition clearfix grpelem globalNavButton" id="techsupport">
-                                    <div class="clearfix grpelem" id="u1005-4">
-                                        <p><span id="u1005">Тех. Поддержка</span></p>
-                                    </div>
-                                </div>
-                            </p:menuitem>
+                           
                             <p:menuitem action="/admin/index.xhtml" rendered="#{userController.adminRole}">
                                 <div class="buttonGlobalMenu TranformLeftToRight globalNavButton" id="admin">
                                     <div class="clearfix grpelem" id="u1027-4">
@@ -86,7 +81,7 @@
                                     </div>
                                 </div>
                             </p:menuitem>
-                        </p:menu>
+                        </p:menu>-->
 
                     </h:form>
                 </div>
