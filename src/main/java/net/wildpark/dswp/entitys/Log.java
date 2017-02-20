@@ -19,6 +19,7 @@ import net.wildpark.dswp.enums.LoggerLevel;
 /**
  *
  * @author Panker-RDP
+ * Класс логирования событий приложения.
  */
 @Entity
 public class Log implements Serializable {

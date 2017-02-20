@@ -18,6 +18,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 /**
  *
  * @author Panker-RDP
+ * Класс основных данных пользователя.Пароль хранится зашифорванный(MD5).
  */
 @Entity
 public class User implements Serializable {

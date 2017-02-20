@@ -13,10 +13,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import net.wildpark.dswp.enums.ConnectionType;
 
 /**
  *
  * @author Panker-RDP
+ * 
+ * Класс определиня единицы мониторинга. Имеет список подчиненных датчиков и контроллеров. Также определяется метод связи, георафическое положение.
  */
 @Entity
 public class MonitoringUnit implements Serializable {
@@ -32,6 +35,7 @@ public class MonitoringUnit implements Serializable {
     private List<Long> sensors=new ArrayList<>();
     private List<Long> controllers=new ArrayList<>();
     private Date created;
+    private ConnectionType connectionType;
 
     public Long getId() {
         return id;
@@ -41,6 +45,63 @@ public class MonitoringUnit implements Serializable {
         this.id = id;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getGeoSite() {
+        return geoSite;
+    }
+
+    public void setGeoSite(String geoSite) {
+        this.geoSite = geoSite;
+    }
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
+    public List<Long> getSensors() {
+        return sensors;
+    }
+
+    public void setSensors(List<Long> sensors) {
+        this.sensors = sensors;
+    }
+
+    public List<Long> getControllers() {
+        return controllers;
+    }
+
+    public void setControllers(List<Long> controllers) {
+        this.controllers = controllers;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public ConnectionType getConnectionType() {
+        return connectionType;
+    }
+
+    public void setConnectionType(ConnectionType connectionType) {
+        this.connectionType = connectionType;
+    }
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

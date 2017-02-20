@@ -7,15 +7,19 @@ package net.wildpark.dswp.entitys;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import net.wildpark.dswp.enums.ConnectionType;
 
 /**
  *
  * @author Panker-RDP
+ * 
+ * Класс определения контроллеров. Аналогичен классу сенсоров.
  */
 @Entity
 public class Controller implements Serializable {
@@ -24,9 +28,13 @@ public class Controller implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+    private String title;
+    private String about;
     private List<Long> storedData=new ArrayList<>();
-
+    private Date lastSeen;
+    private ConnectionType connectionType;
+    private String sensorId;
+    
     public Long getId() {
         return id;
     }

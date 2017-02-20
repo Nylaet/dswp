@@ -7,15 +7,19 @@ package net.wildpark.dswp.entitys;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import net.wildpark.dswp.enums.ConnectionType;
 
 /**
  *
  * @author Panker-RDP
+ * 
+ * Класс определения датчика. Реализация тригера получения данных возлоожена на контроллер.
  */
 @Entity
 public class Sensor implements Serializable {
@@ -24,8 +28,12 @@ public class Sensor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+    private String title;
+    private String about;
     private List<Long> storedData=new ArrayList<>();
+    private Date lastSeen;
+    private ConnectionType connectionType;
+    private String sensorId;
      
     public Long getId() {
         return id;
@@ -35,6 +43,56 @@ public class Sensor implements Serializable {
         this.id = id;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public List<Long> getStoredData() {
+        return storedData;
+    }
+
+    public void setStoredData(List<Long> storedData) {
+        this.storedData = storedData;
+    }
+
+    public Date getLastSeen() {
+        return lastSeen;
+    }
+
+    public void setLastSeen(Date lastSeen) {
+        this.lastSeen = lastSeen;
+    }
+
+    public ConnectionType getConnectionType() {
+        return connectionType;
+    }
+
+    public void setConnectionType(ConnectionType connectionType) {
+        this.connectionType = connectionType;
+    }
+
+    public String getSensorId() {
+        return sensorId;
+    }
+
+    public void setSensorId(String sensorId) {
+        this.sensorId = sensorId;
+    }
+    
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

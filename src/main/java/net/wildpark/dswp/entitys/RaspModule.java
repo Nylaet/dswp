@@ -16,6 +16,9 @@ import javax.persistence.Id;
 /**
  *
  * @author Panker-RDP
+ * 
+ * Класс определения МикроКомпьютера на базе Raspberry. Пока не рализован. Предполагается использование в случае необходимости получения данных о устройстве.
+ * 
  */
 @Entity
 public class RaspModule implements Serializable {
