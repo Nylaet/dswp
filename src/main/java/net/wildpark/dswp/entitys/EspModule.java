@@ -6,6 +6,7 @@
 package net.wildpark.dswp.entitys;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -16,8 +17,7 @@ import javax.persistence.Id;
 /**
  *
  * @author Panker-RDP
- * 
- * Класс определения устройств на базе ESP8266 для регистрации данных о подключенных устройствах.
+ *  
  */
 @Entity
 public class EspModule implements Serializable {
@@ -26,25 +26,17 @@ public class EspModule implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String chipId;
+    private String modelName;
     private String about;
     private Date added;
-    private List<String> sensorsID;
-
+    private List<String> devices=new ArrayList<>();
+    
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getChipId() {
-        return chipId;
-    }
-
-    public void setChipId(String chipId) {
-        this.chipId = chipId;
     }
 
     public String getAbout() {
@@ -62,9 +54,24 @@ public class EspModule implements Serializable {
     public void setAdded(Date added) {
         this.added = added;
     }
-    
-    
 
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public List<String> getDevices() {
+        return devices;
+    }
+
+    public void setDevices(List<String> devices) {
+        this.devices = devices;
+    }
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;
