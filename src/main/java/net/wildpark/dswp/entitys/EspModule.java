@@ -17,7 +17,7 @@ import javax.persistence.Id;
 /**
  *
  * @author Panker-RDP
- *  
+ *  Класс для создания номенклатурной базы типовых устройств
  */
 @Entity
 public class EspModule implements Serializable {
