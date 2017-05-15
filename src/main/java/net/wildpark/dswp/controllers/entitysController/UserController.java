@@ -18,7 +18,6 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import net.wildpark.dswp.controllers.applicationScopeControllers.UsersAllController;
 import net.wildpark.dswp.entitys.Log;
 import net.wildpark.dswp.entitys.User;
 import net.wildpark.dswp.enums.LoggerLevel;
@@ -43,8 +42,6 @@ public class UserController implements Serializable {
     private LogFacade logFacade;
     @Inject
     private MailService mailService;
-    @Inject
-    UsersAllController uac;
     
     private User current;
     private User created;
@@ -110,8 +107,7 @@ public class UserController implements Serializable {
                     logFacade.create(new Log(current.getLogin() + " entered from " + getIpRequest()));
 
                     HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-                    session.setAttribute("current", current);
-                    uac.addSession(session.getId(), user);
+                    session.setAttribute("current", current);                    
                     return "home.xhtml?faces-redirect=true";
                 }
             }

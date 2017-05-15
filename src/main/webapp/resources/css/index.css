@@ -29,7 +29,7 @@
 	z-index: 2;
 	height: 1826px;
 	background-color: #7F7F7F;
-	opacity: 0.63;
+	opacity: 0.2;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=63)";
 	filter: alpha(opacity=63);
 	position: fixed;
@@ -333,7 +333,7 @@
 
 .html
 {
-	background: #052F6E url("../resources/images/background-login.jpg") no-repeat right bottom fixed;
+	background: #052F6E url("../resources/images/index_bg.jpg") no-repeat right bottom fixed;
 	background-size: cover;
 }
 

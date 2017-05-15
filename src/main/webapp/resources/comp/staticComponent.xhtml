@@ -4,7 +4,8 @@
       xmlns:cc="http://xmlns.jcp.org/jsf/composite"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:comp="http://xmlns.jcp.org/jsf/composite/comp">
 
     <!-- INTERFACE -->
     <cc:interface>
@@ -21,67 +22,35 @@
                 <h:outputStylesheet library="css" name="leftNavMenu.css" />
                 <div class="leftNavMenu"><!-- container box -->
                     <div class="clearfix grpelem" id="u1103-4"><!-- content -->                      
+                        <h:form>
                             
+                        </h:form>
                     </div>
                 </div>
             </div>
 
             <div class="browser_width" id="u496-bw"><!-- Up menu frame -->
                 <div class="shadow" id="u496">
-                    <h:form>
-                        <p:commandLink type="button" id="globalButton" >
-                            <div class="clearfix" id="u483"><!-- Logo group -->
-                                <h:graphicImage library="images" name="u484-4.png" id="u484-4" style="width: 126px" />                                
-                            </div>
-                        </p:commandLink>
+                    <h:form>                        
+                        <div class="clearfix" id="u483"><!-- Logo group -->
+                            <h:graphicImage library="images" name="WPlogo black.png" id="u484-4" style="width: 126px;padding-left: 5px;" />                                
+                        </div>                        
                         <div class="clearfix grpelem" id="pu520"><!-- group -->
                             <div class="clip_frame" id="u520"><!-- image -->
                                 <h:graphicImage library="images" name="settings.png" id="u520_img" styleClass="block" style="width:48px;height: 48px;" />
                             </div>
                             <p:commandLink action="/messages.xhtml?faces-redirect=true" >
-                            <div class="clip_frame" id="u530"><!-- image -->
-                                <h:graphicImage library="images" name="message.png" id="u530_img" styleClass="block" style="width:48px;height: 48px;" />
-                                <c:if test="#{userController.current.messages.size()>0}">
-                                    <h:outputText value="#{userController.current.messages.size()}" styleClass="messageInformer" />
-                                </c:if>
-                            </div>
+                                <div class="clip_frame" id="u530"><!-- image -->
+                                    <h:graphicImage library="images" name="message.png" id="u530_img" styleClass="block" style="width:48px;height: 48px;" />
+                                    <c:if test="#{userController.current.messages.size()>0}">
+                                        <h:outputText value="#{userController.current.messages.size()}" styleClass="messageInformer" />
+                                    </c:if>
+                                </div>
                             </p:commandLink>
                         </div>
                         <p:commandLink type="button" id="chatIcon"  >
                             <div class="transition rounded-corners" id="u499" style="cursor: pointer" />                            
-                        </p:commandLink>
-                        <!-- Not needed yet
-                        <p:menu overlay="true" my="left top" at="top right" trigger="globalButton" id="globalMenu" >
-                            <p:menuitem action="/maps/index.xhtml?faces-redirect=true">
-                                <div class="Button transition clearfix colelem globalNavButton" id="maps">
-                                    <div class="clearfix grpelem" id="u957-4">
-                                        <p><span id="u957">Карты</span></p>
-                                    </div>
-                                </div>
-                            </p:menuitem>
-                            <p:menuitem action="#">
-                                <div class="Button transition clearfix colelem globalNavButton" id="wpeco">
-                                    <div class="clearfix grpelem" id="u969-4">
-                                        <p><span id="u969">Wp Eco</span></p>
-                                    </div>
-                                </div>
-                            </p:menuitem>
-                           
-                            <p:menuitem action="/admin/index.xhtml" rendered="#{userController.adminRole}">
-                                <div class="buttonGlobalMenu TranformLeftToRight globalNavButton" id="admin">
-                                    <div class="clearfix grpelem" id="u1027-4">
-                                        <p><span id="u1027">Администратор</span></p>
-                                    </div>
-                                </div>
-                            </p:menuitem>
-                            <p:menuitem action="#{userController.logout()}">
-                                <div class="Button transition clearfix grpelem globalNavButton" id="logout">
-                                    <div class="clearfix grpelem" id="logoutText">
-                                        <p><span id="u1005">Выйти</span></p>
-                                    </div>
-                                </div>
-                            </p:menuitem>
-                        </p:menu>-->
+                        </p:commandLink>                        
 
                     </h:form>
                 </div>
@@ -91,47 +60,3 @@
     </cc:implementation>
 </html>
 
-<!--
-<h:commandLink action="/maps/index.xhtml?faces-redirect=true">
-                                    <div class="Button transition clearfix colelem globalNavButton" id="maps">
-                                        <div class="clearfix grpelem" id="u957-4">
-                                            <p><span id="u957">Карты</span></p>
-                                        </div>
-                                    </div>
-                                </h:commandLink>
-                                <h:commandLink action="/wpeco/index.xhtml?faces-redirect=true">
-                                    <div class="Button transition clearfix colelem globalNavButton" id="wpeco">
-                                        <div class="clearfix grpelem" id="u969-4">
-                                            <p><span id="u969">Wp Eco</span></p>
-                                        </div>
-                                    </div>
-                                </h:commandLink>
-                                <h:commandLink action="/techsupport/index.xhtml?faces-redirect=true">
-                                    <div class="Button transition clearfix grpelem globalNavButton" id="techsupport">
-                                        <div class="clearfix grpelem" id="u1005-4">
-                                            <p><span id="u1005">Тех. Поддержка</span></p>
-                                        </div>
-                                    </div>
-                                </h:commandLink>
-                                <h:commandLink action="/admin/index.xhtml?faces-redirect=true">
-                                    <div class="buttonGlobalMenu TranformLeftToRight globalNavButton" id="admin">
-                                        <div class="clearfix grpelem" id="u1027-4">
-                                            <p><span id="u1027">Администратор</span></p>
-                                        </div>
-                                    </div>
-                                </h:commandLink>
-                                <h:commandLink action="/developer/index.xhtml?faces-redirect=true">
-                                    <div class="Button transition clearfix colelem globalNavButton" id="developer">
-                                        <div class="clearfix grpelem" id="u1049-4">
-                                            <p><span id="u1049">Developer</span></p>
-                                        </div>
-                                    </div>
-                                </h:commandLink>
-                                <h:commandLink action="#{userController.logout()}">
-                                    <div class="Button transition clearfix grpelem globalNavButton" id="logout">
-                                        <div class="clearfix grpelem" id="logoutText">
-                                            <p><span id="u1005">Выйти</span></p>
-                                        </div>
-                                    </div>
-                                </h:commandLink>
--->
