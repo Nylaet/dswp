@@ -1,21 +1,38 @@
-package net.wildpark.dswp.entitys;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package net.wildpark.dswp.entitys.devices;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import net.wildpark.dswp.supports.Sensors;
 
+/**
+ *
+ * @author nylae
+ */
 @Entity
-public class MqttMessage implements Serializable {
+public class WPEcoDevice implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    private Date created;
-    private String j_message;
+    private boolean energySave;
+    private boolean alarm;
+    private String name;
+    private int battery;
+    private int reportTime;//Надо в геттере и сеттере сразу преобразовывать милисекунды в минуты и обратно
+    private String chipId;
+    @Lob
+    private Sensors sensors;
+    private String modelType;
     
     public Long getId() {
         return id;
@@ -24,21 +41,6 @@ public class MqttMessage implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public String getMessage() {
-        return j_message;
-    }
-
-    public void setMessage(String message) {
-        this.j_message = message;
-        this.created=new Date();
-    }
-
-    public Date getCreated() {
-        return created;
-    }
-    
-    
 
     @Override
     public int hashCode() {
@@ -50,10 +52,10 @@ public class MqttMessage implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof MqttMessage)) {
+        if (!(object instanceof WPEcoDevice)) {
             return false;
         }
-        MqttMessage other = (MqttMessage) object;
+        WPEcoDevice other = (WPEcoDevice) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -62,7 +64,7 @@ public class MqttMessage implements Serializable {
 
     @Override
     public String toString() {
-        return "net.wildpark.dswp.entitys.MqttMessage[ id=" + id + " ]";
+        return "net.wildpark.dswp.entitys.devices.WPEcoDevice[ id=" + id + " ]";
     }
     
 }
