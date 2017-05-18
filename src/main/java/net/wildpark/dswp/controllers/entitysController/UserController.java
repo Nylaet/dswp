@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package net.wildpark.dswp.controllers.entitysController;
 
 import javax.inject.Named;
@@ -28,10 +24,7 @@ import net.wildpark.dswp.supports.MailService;
 import net.wildpark.dswp.supports.MailTemplate;
 
 
-/**
- *
- * @author Panker-RDP
- */
+
 @Named(value = "userController")
 @SessionScoped
 public class UserController implements Serializable {
@@ -175,7 +168,7 @@ public class UserController implements Serializable {
     
     private String generatePassword() {
         int charNum, count = 0;
-        String str = "";
+        StringBuilder str = new StringBuilder();
         while (count < 7) {
             
             Random r=new Random(System.currentTimeMillis());
@@ -183,18 +176,18 @@ public class UserController implements Serializable {
                 while (true) {
                     charNum = (int) (Math.random()*1000);
                     if (charNum >= 65 && charNum <= 90) {
-                        str += (char) charNum;
+                        str.append((char) charNum);
                         break;
                     }
                     if (charNum >= 97 && charNum <= 122) {
-                        str += (char) charNum;
+                        str.append((char) charNum);
                         break;
                     }
                 }
             
             count++;
         }
-        return str;
+        return str.toString();
     }
         
     private String getIpRequest(){
