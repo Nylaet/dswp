@@ -60,7 +60,7 @@
 	z-index: 68;
 	padding-bottom: 74px;
 	position: fixed;
-	top: 4px;
+	top: -30px;
 	left: 0px;
 	width: 12.5%;
 	max-width: 120px;
@@ -517,6 +517,14 @@
 	background-color: #D3D3D3;
 }
 
+.dropdown-main .dropdown-content{
+    display: none;
+}
+
+.dropdown-main:hover .dropdown-content{
+    margin:10px 0 0 65px;
+    display: block;
+}
 body
 {
 	position: relative;

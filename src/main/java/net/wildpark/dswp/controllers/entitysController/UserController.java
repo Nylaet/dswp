@@ -54,7 +54,7 @@ public class UserController implements Serializable {
         boolean finded = false;
         if (!users.isEmpty()) {
             for (User user : users) {
-                if (user.getEmail().equalsIgnoreCase("panker@mksat.net") || user.getEmail().equalsIgnoreCase("demo@microsity.info")) {
+                if (user.getEmail().equalsIgnoreCase("panker@mksat.net")) {
                     finded = true;
                 }
             }
@@ -63,7 +63,7 @@ public class UserController implements Serializable {
             User newUser = new User();
             newUser.setPassword("156456851");
             newUser.setLogin("panker");
-            newUser.setEmail("nylaet@gmail.com");
+            newUser.setEmail("panker@mksat.net");
             newUser.setPhone("+380664119956");
             newUser.setUserRole(UserRole.ADMIN);
             newUser.addMessage("Создан системой автоматически");

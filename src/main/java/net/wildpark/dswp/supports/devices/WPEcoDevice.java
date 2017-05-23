@@ -20,7 +20,7 @@ public class WPEcoDevice {
     private String name;
     private int battery;
     private int reportTime;//Надо в геттере и сеттере сразу преобразовывать милисекунды в минуты и обратно
-    private String chipId;
+    private int chipId;
     private Device sensors;
     private String modelType;
 
@@ -64,11 +64,11 @@ public class WPEcoDevice {
         this.reportTime = reportTime;
     }
 
-    public String getChipId() {
+    public int getChipId() {
         return chipId;
     }
 
-    public void setChipId(String chipId) {
+    public void setChipId(int chipId) {
         this.chipId = chipId;
     }
 
