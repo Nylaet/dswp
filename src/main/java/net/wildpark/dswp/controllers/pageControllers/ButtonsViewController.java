@@ -38,7 +38,7 @@ public class ButtonsViewController {
             case "Find":
                 return "Найти";
             default:
-                return "attr";
+                return attr;
         }
     }
 

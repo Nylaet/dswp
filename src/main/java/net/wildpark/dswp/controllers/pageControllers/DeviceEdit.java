@@ -20,4 +20,9 @@ public class DeviceEdit {
     public void setEcoDevice(WPEcoDevice ecoDevice) {
         this.ecoDevice = ecoDevice;
     }
+
+    public boolean showPanel(){
+        if(ecoDevice.getChipId()>0)return true;
+        return false;
+    }
 }

@@ -15,7 +15,6 @@ package net.wildpark.dswp.supports.devices;
 public class WPEcoDevice {
 
     private static final long serialVersionUID = 1L;
-    private boolean energySave;
     private boolean alarm;
     private String name;
     private int battery;
@@ -23,14 +22,6 @@ public class WPEcoDevice {
     private int chipId;
     private Device sensors;
     private String modelType;
-
-    public boolean isEnergySave() {
-        return energySave;
-    }
-
-    public void setEnergySave(boolean energySave) {
-        this.energySave = energySave;
-    }
 
     public boolean isAlarm() {
         return alarm;

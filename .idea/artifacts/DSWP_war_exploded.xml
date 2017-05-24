@@ -11,7 +11,7 @@
           <element id="library" level="project" name="Maven: org.apache.commons:commons-email:1.4" />
           <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.2" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1.1" />
-          <element id="library" level="project" name="Maven: org.primefaces:primefaces:5.3" />
+          <element id="library" level="project" name="Maven: org.primefaces:primefaces:6.1" />
           <element id="library" level="project" name="Maven: net.glxn:qrgen:1.4" />
           <element id="library" level="project" name="Maven: com.google.zxing:javase:3.0.0" />
           <element id="library" level="project" name="Maven: com.google.zxing:core:3.0.0" />
